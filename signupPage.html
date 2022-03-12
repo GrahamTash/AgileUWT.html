@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title> TINFO482 </title>
+        <link rel="stylesheet" href="agilestyle.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    </head>
+    <body>
+    
+            <div class="header">
+                <h1>Create Requirements</h1>
+                    <p></p>
+</div>
+        <div class = "home3">
+            <p>Add New Requirement</p>
+            <script src="requirements.js" defer></script>
+<p>Requirement Name</p>
+      <input type="text" id="reqName"><br>
+      <p>Desription Text (optional)</p>
+      <textarea id="reqDsc"></textarea><br>
+      <P>Priority</P>
+      <input type="radio" name="choosePriority"id="lowPriority" value="LowP"><label for="Low Priority">Low Priority</label> 
+      <br>
+      <input type="radio" name="choosePriority"id="midPriority" value="MediumP"><label for="Medium Priority">Medium Priority</label>
+      <br>
+      <input type="radio" name="choosePriority"id="highPriority" value="HighP"><label for="High Priority">High Priority</label>
+      <br><br>
+      <input type="submit" id="submitReq" value="Add Requirement">
+      <br>
+      <section id="reqFormErrors" style="display: none; color: red; font-size: 20px;">
+        <ul>
+            <li id="reqErr1">Requirement Name needed.</li>
+            <li id="reqErr2">Priority not selected.</li>
+        </ul>
+
+       </section>
+      <p id= "reqAddedMsg" style="display: none; font-size: 28px;">Requirement Added!</p>
+            <p class = "formss"><a href="CreateSprint.html">Continue</a></p>
+        </div>
+    </body>
+</html>
