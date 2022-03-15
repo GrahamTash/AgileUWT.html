@@ -10,9 +10,8 @@
                 <h1>Create New Account</h1>
                     <p></p>
 </div>
-        <script src="thejavascript.js" defer></script>
-   <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
-   <body>
+        <script src="ajavascript.js" defer></script>
+   <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
       
    <div class="content">
         <section id="formDesc">
@@ -23,6 +22,24 @@
             <section id="Form1">
                 
             	<p class="form">Fill out this form</p>
+            	<img id="profilePic" src="defaultProfile.png" width="200" height="200"><br>
+                <input type="file" accept="image/*" onchange="uploadProfile(event)">
+                
+                <style>
+                img {
+                  border-radius: 50%;
+                }
+                </style>
+                <script>
+                  var uploadProfile = function(event) {
+                    var output = document.getElementById('profilePic');
+                    output.src = URL.createObjectURL(event.target.files[0]);
+                    output.onload = function() {
+                      URL.revokeObjectURL(output.src) // free memory
+                    }
+                  };
+                </script>
+                
             	<p class="form2">Full name</p>
 	            <input type="text" id="fullName" class="typeIn"><br>
 	            <p class="form3">Email address</p>
@@ -45,9 +62,10 @@
 			  	<p id= "successMsg" style="display: none; font-size: 28px;">Confirmation Email sent!</p>
         	</section>
   </div>
-<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6db30f47abf4682c',m:'xpVRaIjn_B.i74D9gEOobZBDI6ZdHGcO9JBQ.9cSIb0-1644472224-0-AQBteGHuHz0RwqsBVoG/F7ZMRG5It2Z8k6ZxQiIBYUleUCawzbPjAN2HRGthRW4G+OlOoI7EJbEPHgbN0wHtdX/jZ1e57IONaYmeDm9/SGN+ijh5TbSmmWv58HcuFSDBjZEkP2RVjmEQgzGT6+7h08cr0rObwqDEDkM73ACQ52gbHeuwEloj5Y4UtiD7P9ToqA5Nro1yQjkmAYckaqIlZAU=',s:[0x6492fd5a86,0xd747578900],}})();</script>
+<!-- <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6db30f47abf4682c',m:'xpVRaIjn_B.i74D9gEOobZBDI6ZdHGcO9JBQ.9cSIb0-1644472224-0-AQBteGHuHz0RwqsBVoG/F7ZMRG5It2Z8k6ZxQiIBYUleUCawzbPjAN2HRGthRW4G+OlOoI7EJbEPHgbN0wHtdX/jZ1e57IONaYmeDm9/SGN+ijh5TbSmmWv58HcuFSDBjZEkP2RVjmEQgzGT6+7h08cr0rObwqDEDkM73ACQ52gbHeuwEloj5Y4UtiD7P9ToqA5Nro1yQjkmAYckaqIlZAU=',s:[0x6492fd5a86,0xd747578900],}})();</script>
+-->
         <div class = "home3">
-            <p class = "formss"><a href="CreateNewProjectPage.html">Continue</a></p>
+            <p class = "formss" id="cont" style="display: none;"><a href="CreateNewProjectPage.html">Continue</a></p>
         </div>
     </body>
 </html>
